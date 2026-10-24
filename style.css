@@ -1,0 +1,411 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body::before{
+    content: "";
+}
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 4px 20px rgba(0, 0, 0, 0.07);
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    height: 50px;
+    width: auto;
+}
+.logo h3 {
+    color: #7b1b2e;
+    font-size: 1.8em;
+}
+header nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+header nav ul li a:hover{
+    background-color: #7b1b2e;
+    color: white;
+    transition: 0.3s;
+}
+
+@media (max-width: 968px) {
+    .hamburger {
+        display: flex;
+    }
+    header nav ul {
+        position: fixed;
+        left: -100%;
+        top: 90px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 1001;
+    }
+    header nav ul.active {
+        left: 0;
+    }
+    header nav ul li {
+        margin: 16px 0;
+    }
+    .icone {
+        display: none;
+    }
+    #section1 h1 {
+        font-size: 28px;
+    }
+    #section3 {
+        width: 90%;
+    }
+    #section3 h1 {
+        font-size: 32px;
+    }
+    #section4 {
+        width: 90%;
+    }
+    #section4 .title h1 {
+        font-size: 32px;
+    }
+    #section5 .title1 h1 {
+        font-size: 32px;
+    }
+    .container {
+        width: 90%;
+    }
+}
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    
+}
+
+.hamburger span{
+    width: 28px;
+    height: 3px;
+    background: #7b1b2e;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.hamburger.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -6px);
+}
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+.menu-overlay.active {
+    display: block;
+}
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.icone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.icone-1{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.icone-2{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.icone-3{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.fa-cart-shopping{
+    margin: auto;
+}
+.fa-language{
+    margin: auto;
+}
+.fa-phone{
+    margin: auto;
+}
+.icone h5{
+    max-width: 200px;
+    text-align: center;
+}
+.icone-2 select{
+    border: none;
+    border-radius: 20px;
+}
+
+/* main */
+#section1{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/hamburger-laitue-tomates-table-bois_514619-8270.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 16px;
+    text-align: center;
+    padding: 20px;
+}
+#section1 h1{
+    font-size: 40px;
+    font-weight: 900;
+    max-width: 800px;
+}
+#section1 h5{
+    font-size: 16px;
+    font-weight: 600;
+}
+#section1 a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: #9cb270;
+}
+#section1 a:hover{
+    background-color: #7b1b2e;
+    transition: 0.3s;
+}
+#section2{
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+}
+#section2 img{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
+
+#section3{
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-top: 48px;
+    margin: auto;
+}
+#section3 h4 {
+    color: #5e1522;
+    font-weight: 100;
+    max-width: 500px;
+}
+#section3 h1{
+    font-size: 48px;
+    font-weight: 900;
+    max-width: 600px;
+}
+#section3 p{
+    max-width: 600px;
+    letter-spacing: 0px;
+    margin-top: 16px;
+    font-family: poppins;
+    font-size: 15px;
+}
+#section3 .lien{
+    margin-top: 32px;
+}
+#section3 .lien a{
+    margin-top: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #5e1522;
+    padding: 15px;
+    border-radius: 25px;
+}
+#section3 .lien a:hover{
+    background-color: #7b1b2e;
+    color: white;
+    transition: 0.3s;
+}
+
+#section4{
+    margin-top: 48px;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+#section4 .title{
+    margin-top: 80px;
+}
+#section4 .title h4{
+    color: #7b1b2e;
+    font-weight: 100;
+}
+#section4 .title h1{
+    font-size: 48px;
+    font-weight: 900;
+    max-width: 700px;
+}
+#section4  input{
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    padding: 15px;
+}
+#section4 a{
+    margin-top: 8px;
+    text-decoration: none;
+    color: white;
+    background-color: #5e1522;
+    padding: 15px 45px;
+    border-radius: 25px;
+    /* opacity: 1;
+    transform: scale(1.02); */
+}
+#section4 a:hover{
+    background-color:#7b1b2e ;
+}
+
+#section5{
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+#section5 .title1{
+    margin-top: 48px;
+}
+#section5 .title1 h4{
+    color: #7b1b2e;
+    font-weight: 100;
+}
+#section5 .title1 h1{
+    font-size: 48px;
+    font-weight: 900;
+    max-width: 700px;
+    margin-bottom: 16px;
+}
+.container{
+    overflow: hidden;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+}
+.track{
+    display: flex;
+    gap: 15px;
+    animation: defiler 12s linear infinite;
+}
+.track img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+@keyframes defiler {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+footer{
+    margin-top: 32px;
+    background-color: #1a1a2e;
+    color: white;
+    padding: 20px;
+    letter-spacing: 1px;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+.foot1{
+    flex-direction: column;
+}
+.foot1 p{
+    max-width: 200px;
+}
+.foot1 .icon{
+    margin-top: 16px;
+}
+.fa-facebook{
+    font-size: 24px;
+}
+.fa-instagram{
+    font-size: 24px;
+}
+.fa-snapchat{
+    font-size: 24px;
+}
+footer ul li{
+    list-style: none;
+}
+footer h3{
+    margin-bottom: 16px;
+}
+.bas p{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

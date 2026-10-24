@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVORA - Réservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reservation-page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .btn-submit { background: #7b1b2e; color: white; padding: 12px 40px; border: none; border-radius: 25px; cursor: pointer; font-size: 1em; }
+        .info-note { background: #fff3cd; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/savora-logo.png" alt="Logo SAVORA" onerror="this.style.display='none'">
+            <h3>SAVORA</h3>
+        </div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <nav>
+            <ul class="lien" id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="icone">
+            <a href="panier.html" class="icone-1" style="text-decoration: none; color: inherit;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h5>Panier <span class="cart-count">0</span></h5>
+            </a>
+        </div>
+    </header>
+
+    <main class="reservation-page">
+        <h1>Demande de Réservation</h1>
+        <div class="info-note">
+            <strong>Important:</strong> WhatsApp s'ouvrira avec votre demande de réservation préparée. Vous devez l'envoyer vous-même. La réservation n'est PAS automatiquement confirmée - le restaurant doit vérifier ses disponibilités et répondre.
+        </div>
+        <form id="reservation-form">
+            <div class="form-group">
+                <label for="res-name">Nom complet *</label>
+                <input type="text" id="res-name" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="res-phone">Numéro de téléphone *</label>
+                    <input type="tel" id="res-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-email">E-mail (facultatif)</label>
+                    <input type="email" id="res-email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="res-date">Date souhaitée *</label>
+                    <input type="date" id="res-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-time">Heure souhaitée *</label>
+                    <input type="time" id="res-time" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="res-people">Nombre de personnes *</label>
+                <input type="number" id="res-people" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="res-comment">Commentaire (facultatif)</label>
+                <textarea id="res-comment" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Envoyer la demande via WhatsApp</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="foot1">
+                <h3>SAVORA</h3>
+                <p>Toutes les saveurs, une seule adresse. Savourez des plats délicieusement préparés.</p>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-snapchat"></i>
+                </div>
+            </div>
+            <div class="foot2">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html" style="color: white; text-decoration: none;">Accueil</a></li>
+                    <li><a href="menu.html" style="color: white; text-decoration: none;">Menu</a></li>
+                    <li><a href="apropos.html" style="color: white; text-decoration: none;">À propos</a></li>
+                    <li><a href="reservation.html" style="color: white; text-decoration: none;">Réservation</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="foot3">
+                <h3>Commandes</h3>
+                <ul>
+                    <li><a href="panier.html" style="color: white; text-decoration: none;">Panier</a></li>
+                    <li><a href="commande.html" style="color: white; text-decoration: none;">Commander</a></li>
+                </ul>
+            </div>
+            <div class="foot4">
+                <h3>Informations</h3>
+                <ul>
+                    <li>Site statique - WhatsApp uniquement</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bas">
+            <p>SAVORA | Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <div class="menu-overlay" id="overlay"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

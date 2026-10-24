@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVORA - Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .menu-page { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .menu-header { text-align: center; margin-bottom: 40px; }
+        .menu-controls { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; }
+        .menu-controls input, .menu-controls select { padding: 10px 20px; border-radius: 25px; border: 1px solid #ddd; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .menu-card { border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .menu-card img { width: 100%; height: 200px; object-fit: cover; }
+        .menu-card h3 { padding: 15px 15px 5px; color: #7b1b2e; }
+        .menu-card p { padding: 0 15px; font-size: 0.9em; color: #666; }
+        .menu-card-footer { display: flex; justify-content: space-between; align-items: center; padding: 15px; }
+        .price { font-weight: bold; color: #5e1522; }
+        .btn-add { background: #9cb270; color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
+        .btn-add:hover { background: #7b1b2e; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/savora-logo.png" alt="Logo SAVORA" onerror="this.style.display='none'">
+            <h3>SAVORA</h3>
+        </div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <nav>
+            <ul class="lien" id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="icone">
+            <a href="panier.html" class="icone-1" style="text-decoration: none; color: inherit;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h5>Panier <span class="cart-count">0</span></h5>
+            </a>
+        </div>
+    </header>
+
+    <main class="menu-page">
+        <div class="menu-header">
+            <h1>Notre Menu</h1>
+            <p>Découvrez nos délicieuses créations</p>
+        </div>
+        <div class="menu-controls">
+            <input type="text" id="menu-search" placeholder="Rechercher un plat...">
+            <select id="menu-filter">
+                <option value="all">Toutes les catégories</option>
+                <option value="Burgers">Burgers</option>
+                <option value="Pizzas">Pizzas</option>
+                <option value="Poulet">Poulet</option>
+                <option value="Accompagnements">Accompagnements</option>
+                <option value="Boissons">Boissons</option>
+                <option value="Desserts">Desserts</option>
+            </select>
+        </div>
+        <div id="menu-grid" class="menu-grid"></div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="foot1">
+                <h3>SAVORA</h3>
+                <p>Toutes les saveurs, une seule adresse. Savourez des plats délicieusement préparés.</p>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-snapchat"></i>
+                </div>
+            </div>
+            <div class="foot2">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html" style="color: white; text-decoration: none;">Accueil</a></li>
+                    <li><a href="menu.html" style="color: white; text-decoration: none;">Menu</a></li>
+                    <li><a href="apropos.html" style="color: white; text-decoration: none;">À propos</a></li>
+                    <li><a href="reservation.html" style="color: white; text-decoration: none;">Réservation</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="foot3">
+                <h3>Commandes</h3>
+                <ul>
+                    <li><a href="panier.html" style="color: white; text-decoration: none;">Panier</a></li>
+                    <li><a href="commande.html" style="color: white; text-decoration: none;">Commander</a></li>
+                </ul>
+            </div>
+            <div class="foot4">
+                <h3>Informations</h3>
+                <ul>
+                    <li>Site statique - WhatsApp uniquement</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bas">
+            <p>SAVORA | Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <div class="menu-overlay" id="overlay"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
